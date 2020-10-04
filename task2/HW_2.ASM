@@ -1,3 +1,4 @@
+;Вариант 7. Найти индексы положительных элементов массива А
 format PE console
 entry start
 
@@ -100,12 +101,10 @@ GetPositiveIndexesLoop:
         mov eax, [ebx]
         add ebx, 4
         cmp eax, 0
-        ;inc ecx
         jg InputElem
         jmp GetPositiveIndexesLoop
 InputElem:
         mov [edi], ecx
-        ;inc vec_B_size
         add edi,4
         inc esi
         jmp GetPositiveIndexesLoop
@@ -139,7 +138,6 @@ VectorAOut:
         call [printf]
         xor ecx,ecx
         mov ebx,A
-       ; inc[vec_size]
 putVecALoop:
         mov [tmp], ebx
         cmp ecx,[vec_A_size]
